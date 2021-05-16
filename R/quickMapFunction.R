@@ -8,27 +8,15 @@
 #' @return leaflet choropleth map with quantile bins
 #' @export
 
-
-pal <- function (x)
-{
-  if (length(x) == 0 || all(is.na(x))) {
-    return(pf(x))
-  }
-  if (is.null(rng))
-    rng <- range(x, na.rm = TRUE)
-  rescaled <- scales::rescale(x, from = rng)
-  if (any(rescaled < 0 | rescaled > 1, na.rm = TRUE))
-    warning("Some values were outside the color scale and will be treated as NA")
-  if (reverse) {
-    rescaled <- 1 - rescaled
-  }
-  pf(rescaled)
-}
-
-quickMap <- function(df,column,labelcolumn){colorQuantile("BuPu", NULL)
-  leaflet::leaflet(df) %>%
-    addTiles() %>%
-    addPolygons(stroke = FALSE, smoothFactor = 0.3, fillOpacity = 1,
-                fillColor = ~pal(column),
+quickMap <- function(df,column,labelcolumn){
+  factpal <- leaflet::colorQuantile("BuPu", NULL)
+  m <-   
+    leaflet::leaflet(df) %>%
+    leaflet::addTiles() %>%
+    leaflet::addPolygons(stroke = FALSE, smoothFactor = 0.3, fillOpacity = 1,
+                fillColor = ~factpal(column),
                 label = ~paste0(labelcolumn, ": ", formatC(column, big.mark = ","))) %>%
-    addLegend(pal = pal, values = ~column, opacity = 1.0)}
+    leaflet::addLegend(pal = factpal, values = ~column, opacity = 1.0)
+   
+  
+  return(m)}
