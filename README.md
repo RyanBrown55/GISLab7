@@ -11,7 +11,7 @@ The goal of quickMap is to enable users to create choropleth maps of spatial dat
 You can install the released version of quickMap from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("quickMap")
+devtools::install_github("RyanBrown55/quickMap")
 ```
 
 ## Example
