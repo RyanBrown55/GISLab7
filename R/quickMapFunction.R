@@ -3,6 +3,7 @@
 #' This function reads a OGR object, a selected column from that data frame to be mapped and a label for areal units.
 #' The data is then mapped via leaflet!
 #' @importFrom magrittr %>%
+#' @name %>%
 #' @param df rgdal, readOGR obejcet
 #' @param column the data you would like to use for the choropleth map with quantile bins!
 #' @param labelcolumn unique identifier for areal units
