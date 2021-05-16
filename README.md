@@ -19,6 +19,7 @@ devtools::install_github("RyanBrown55/GISLab7")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
+library(quickMap)
 df <- rgdal::readOGR("/pathToYourFile/nyc.geojson")
 quickMap(df,df$rent2005,df$name)
 ```
