@@ -11,8 +11,8 @@
 
 quickMap <- function(df,column,labelcolumn){leaflet::colorQuantile("BuPu", NULL)
   leaflet::leaflet(df) %>%
-    addTiles() %>%
-    addPolygons(stroke = FALSE, smoothFactor = 0.3, fillOpacity = 1,
-                fillColor = ~pals::pal(column),
+    leaflet::addTiles() %>%
+    leaflet::addPolygons(stroke = FALSE, smoothFactor = 0.3, fillOpacity = 1,
+                fillColor = ~pal(column),
                 label = ~paste0(labelcolumn, ": ", formatC(column, big.mark = ","))) %>%
-    addLegend(pal = pal, values = ~column, opacity = 1.0)}
+   leaflet::addLegend(pal = pal, values = ~column, opacity = 1.0)}
