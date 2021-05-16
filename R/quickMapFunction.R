@@ -9,7 +9,7 @@
 #' @export
 
 
-pal < function (x)
+pal <- function (x)
 {
   if (length(x) == 0 || all(is.na(x))) {
     return(pf(x))
