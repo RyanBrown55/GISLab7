@@ -9,6 +9,7 @@
 #' @export
 
 quickMap <- function(df,column,labelcolumn){
+  library(dplyr)
   factpal <- leaflet::colorQuantile("BuPu", NULL)
   m <-   
     leaflet::leaflet(df) %>%
