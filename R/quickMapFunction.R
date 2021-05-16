@@ -12,6 +12,7 @@
 
 quickMap <- function(df,column,labelcolumn){
   factpal <- leaflet::colorQuantile("BuPu", NULL)
+  `%>%` <- purrr::`%>%`
   m <-   
     leaflet::leaflet(df) %>%
     leaflet::addTiles() %>%
