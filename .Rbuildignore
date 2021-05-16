@@ -1,0 +1,5 @@
+^quickMap\.Rproj$
+^\.Rproj\.user$
+^quickMap\.Rcheck$
+^quickMap.*\.tar\.gz$
+^quickMap.*\.tgz$

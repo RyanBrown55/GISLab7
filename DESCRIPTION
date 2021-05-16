@@ -1,0 +1,17 @@
+Package: quickMap
+Title: Quick Quantile Choropleth Map
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Ryan",
+           family = "Brown",
+           role = c("aut", "cre"),
+           email = "ryanbrown55@verizon.net",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package requires a regalOGR object. With this, a target column and a label column it will quickly create a choropleth map of your data! The binning is done by quantiles. The map itself is a product of leaflet. A smoothFactor of 0.3 is used as well as a fillOpacity of one. The aim here is to enable R newcomers and veterans alike to create choropleth maps for EDA in seconds. 
+License: `use_mit_license()`
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports:
+	leaflet
