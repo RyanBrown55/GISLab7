@@ -9,7 +9,7 @@
 #' @export
 
 
-quickMap <- function(df,column,labelcolumn){colorQuantile("BuPu", NULL)
+quickMap <- function(df,column,labelcolumn){leaflet::colorQuantile("BuPu", NULL)
   leaflet::leaflet(df) %>%
     addTiles() %>%
     addPolygons(stroke = FALSE, smoothFactor = 0.3, fillOpacity = 1,
