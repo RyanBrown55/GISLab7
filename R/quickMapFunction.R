@@ -11,11 +11,11 @@
 quickMap <- function(df,column,labelcolumn){
   factpal <- leaflet::colorQuantile("BuPu", NULL)
   m <-   
-    leaflet::leaflet(df) leaflet::%>%
-    leaflet::addTiles() leaflet::%>%
+    leaflet::leaflet(df) %>%
+    leaflet::addTiles() :%>%
     leaflet::addPolygons(stroke = FALSE, smoothFactor = 0.3, fillOpacity = 1,
                 fillColor = ~factpal(column),
-                label = ~paste0(labelcolumn, ": ", formatC(column, big.mark = ","))) dplyr::%>%
+                label = ~paste0(labelcolumn, ": ", formatC(column, big.mark = ","))) %>%
     leaflet::addLegend(pal = factpal, values = ~column, opacity = 1.0)
    
   
